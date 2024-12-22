@@ -47,6 +47,8 @@ namespace BlackPaper
             else setLightLevel(config.beginLight);
 
             开机自动启动ToolStripMenuItem.Checked = config.isAutoRun;
+
+            notifyIcon2.Icon = new Icon(Application.StartupPath + "/icon.ico");
         }
 
         private void 开机自动启动ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +144,11 @@ namespace BlackPaper
         {
             double op = (double)toolStripComboBox1.SelectedIndex / 5;
             setLightLevel(op);        
+        }
+
+        private void notifyIcon2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

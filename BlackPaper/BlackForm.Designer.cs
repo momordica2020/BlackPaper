@@ -30,23 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackForm));
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.ToolStripMenuItem_state = new System.Windows.Forms.ToolStripMenuItem();
+            this.自动调整亮度ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开机自动启动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.自动调整亮度ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "BlackPaper";
-            this.notifyIcon1.Visible = true;
             // 
             // contextMenuStrip1
             // 
@@ -60,7 +53,7 @@
             this.开机自动启动ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 203);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 170);
             // 
             // toolStripComboBox1
             // 
@@ -81,15 +74,24 @@
             this.ToolStripMenuItem_state.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ToolStripMenuItem_state.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ToolStripMenuItem_state.Name = "ToolStripMenuItem_state";
-            this.ToolStripMenuItem_state.Size = new System.Drawing.Size(240, 32);
+            this.ToolStripMenuItem_state.Size = new System.Drawing.Size(194, 32);
             this.ToolStripMenuItem_state.Text = "当前亮度：%";
+            // 
+            // 自动调整亮度ToolStripMenuItem
+            // 
+            this.自动调整亮度ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.自动调整亮度ToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.自动调整亮度ToolStripMenuItem.Name = "自动调整亮度ToolStripMenuItem";
+            this.自动调整亮度ToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
+            this.自动调整亮度ToolStripMenuItem.Text = "自动亮度 @";
+            this.自动调整亮度ToolStripMenuItem.Click += new System.EventHandler(this.自动调整亮度ToolStripMenuItem_Click);
             // 
             // 开机自动启动ToolStripMenuItem
             // 
             this.开机自动启动ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.开机自动启动ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.开机自动启动ToolStripMenuItem.Name = "开机自动启动ToolStripMenuItem";
-            this.开机自动启动ToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.开机自动启动ToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
             this.开机自动启动ToolStripMenuItem.Text = "开机自动启动";
             this.开机自动启动ToolStripMenuItem.Click += new System.EventHandler(this.开机自动启动ToolStripMenuItem_Click);
             // 
@@ -98,24 +100,23 @@
             this.退出ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.退出ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
-            // 
-            // 自动调整亮度ToolStripMenuItem
-            // 
-            this.自动调整亮度ToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.自动调整亮度ToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.自动调整亮度ToolStripMenuItem.Name = "自动调整亮度ToolStripMenuItem";
-            this.自动调整亮度ToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.自动调整亮度ToolStripMenuItem.Text = "自动亮度 @";
-            this.自动调整亮度ToolStripMenuItem.Click += new System.EventHandler(this.自动调整亮度ToolStripMenuItem_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 300000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // notifyIcon2
+            // 
+            this.notifyIcon2.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon2.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon2.Text = "notifyIcon2";
+            this.notifyIcon2.Visible = true;
+            this.notifyIcon2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon2_MouseDoubleClick);
             // 
             // BlackForm
             // 
@@ -124,7 +125,6 @@
             this.ClientSize = new System.Drawing.Size(917, 365);
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BlackForm";
@@ -141,8 +141,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开机自动启动ToolStripMenuItem;
@@ -150,6 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem 自动调整亮度ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_state;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon2;
     }
 }
 
